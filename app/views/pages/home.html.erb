@@ -1,0 +1,97 @@
+
+<%=render "menu"%>
+<%=render "profile-popup"%>
+
+<div id="container">
+	<div class="dashboard">
+   	<div id="mini-profile" class="round-box">
+			<div style="padding: 10px 10px 10px;">
+			 <table >
+   		  <tr border="none" VALIGN=TOP>
+				<td>
+ 				  <div>
+				     <%=image_tag("default_profile_0_normal.png",:style=>"width: 32px; height: 32px;",:class=>"profile-image")%>
+				   </div>
+				</td>
+				<td colspan="2" style=" padding-left:8px;">
+				  
+ 				   <div><%=link_to "Nagesh Vanam",own_path %></div>
+ 				  
+ 				 <small style="color:#999999">View my profile page</small>
+    			</td>
+			  </tr>
+			 </table>
+			</div>
+			
+			<div class="tweet-box">
+			 <table width="100%" cellspacing="0">
+   		  <tr VALIGN=TOP>
+				<td width="20%" style="padding:4px 10px 4px 10px">
+ 				  <div style="font-size: 14px;"><b>237</b></div>
+ 				  <div style="color: #999;font-size: 10px;line-height: 16px;text-transform: uppercase;">Tweet
+ 				  </div>
+				</td>
+				<td bgcolor="#dddddd"></td>
+				<td width="30%" style="padding:4px 10px 4px 10px">
+				  <div style="font-size: 14px;"><b>98</b></div>
+ 				  <div style="color: #999;font-size: 10px;line-height: 16px;text-transform: uppercase;">Following
+ 				  </div>
+				</td>
+				<td bgcolor="#dddddd"></td>
+				<td  width="50%" style="padding:4px 10px 4px 10px">
+				  <div style="font-size: 14px;"><b>156</b></div>
+ 				  <div style="color: #999;font-size: 10px;line-height: 16px;text-transform: uppercase;">Followers
+ 				  </div>
+				</td>
+			  </tr>
+			 </table>
+			</div>
+			
+			<div style="padding: 10px 10px 10px;" class="tweet-box">
+			 		<div class="text-area">
+			 		<textarea rows="1" id="tweet" class="tweet-textarea">Compose new Tweet...</textarea>
+			 		</div>
+			 		<div style="display:none">
+			 		<table style="padding-top: 12px;" border="0" cellspacing="0" cellpadding="0">
+			 			<tr align="right">
+			 			<td width="230px" style="padding-right:8px">
+						<%=image_tag("img.gif", :style=>"display:none;") %>
+			 			<div id="char-count" style="color: #999;font-size: 14px;line-height: 16px;text-transform: uppercase;">140</div>
+			 			</td>
+			 			<td>
+			<%=link_to "Tweet", create_tweet_path, :id=>"btn-tweet", :style=>"color:#000000; text-decoration:none;", :class=>"btn", :remote=>true %>
+			 			</td>
+			 			</tr>
+			 		</table>
+			 		</div>
+			 		
+			</div>
+			
+		</div>
+   	<div id="suggestion-box"  class="round-box">
+   	   <h3 style="margin-left:8px">Who to Follow</h3>
+	   <%=render "suggestbox"%>
+	   <%=render "suggestbox"%>
+	   <%=render "suggestbox"%>
+	</div>
+	</div>
+	<div class="content">
+		<div class="round-box" id="tweets">
+			<div><h2>&nbsp&nbspTweets</h2></div>
+			<%=render "tweetbox"%>
+			<%=render "tweetbox"%>
+			<%=render "tweetbox"%>
+			<%=render "tweetbox"%>
+			<%=render "tweetbox"%>
+			<%=render "tweetbox"%>
+			<%=render "tweetbox"%>
+			<%=render "tweetbox"%>
+			<%=render "tweetbox"%>
+			<%=render "tweetbox"%>			
+		</div>
+	</div>
+	 <div class="footer" />
+</div>
+</body>
+
+

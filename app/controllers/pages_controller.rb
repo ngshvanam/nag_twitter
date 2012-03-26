@@ -11,4 +11,16 @@ def follow
   end
 end
 
+def home
+@title = "Twitter-Home"
+end
+
+def own
+@title ="Twitter-Own"
+end
+
+def profile
+@title ="Twitter-Profile"
+end
+
 end
