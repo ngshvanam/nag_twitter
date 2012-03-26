@@ -1,0 +1,45 @@
+ <div class="tweet-box" >
+				<div style="padding: 9px 12px 9px;">
+				  <table bordar="none">
+					<tr VALIGN=TOP>     
+					 <td style="valign:top;">					
+					<%follower_image = image_tag("BGtwitter_normal.JPG", :width=>"60px",:height=>"60px", :class=>"profile-image") %>
+                                        <%=link_to follower_image,"#" %>
+ 
+				    </td>
+				    <td style="width:340px; padding-left:8px;">
+				       <a href="#">
+			 	 	 	   Bill Gates 
+		 		        </a>
+		 		        <small>@billgates</small>
+		 		        <div></div>
+					 </td>
+					 <td>
+					   <%=link_to "Follow","#",:class=>"follow-btn"%>
+					 </td>
+					</tr>
+		 		  </table>
+				</div>
+			</div>
+			<div class="tweet-box" >
+				<div style="padding: 9px 12px 9px;">
+				  <table bordar="none">
+					<tr VALIGN=TOP>     
+					 <td style="valign:top;">					
+					<%follower_image = image_tag("BGtwitter_normal.JPG", :width=>"60px",:height=>"60px", :class=>"profile-image") %>
+                                        <%=link_to follower_image,"#" %>
+				    </td>
+				    <td style="width:340px; padding-left:8px;">
+				       <a href="#">
+			 	 	 	   Bill Gates 
+		 		        </a>
+		 		        <small>@billgates</small>
+		 		        <div></div>
+					 </td>
+					 <td>
+					   <%=link_to "Following","#",:class=>"following-btn"%>
+					 </td>
+					</tr>
+		 		  </table>
+				</div>
+			</div>

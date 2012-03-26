@@ -1,0 +1,55 @@
+
+<div id="menu">
+	<div>
+	<table VALIGN=MIDDLE height="100%" width="100%">
+		<tr><td></td><td width="610px"></td><td><small id="signin-btn" style="cursor:hand;float:right; color:#bbbbbb;font-size:12px;font-weight:normal;">Have an account? Sign in</small>
+
+<fieldset id="signin_menu">
+    <%= form_for @user, :url => url_for(:controller => 'users', :action => 'authenticate'),:id=>"signin" do |f| %>
+      <label for="username">Username or email</label>
+     
+      <%=f.text_field :name, :id=>"username", :title=>"username", :tabindex=>"4"%>
+      
+     </p>
+      <p>
+        <label for="password">Password</label>
+      <%=password_field :password, :id=>"password", :title=>"password", :tabindex=>"5" %>
+      </p>
+      <p class="remember">
+        <%=f.submit "sign in",:id=>"signin_submit", :tabindex=>"6" %>
+        <input id="remember" name="remember_me" value="1" tabindex="7" type="checkbox">
+        <label for="remember">Remember me</label>
+      </p>
+    <%end%>
+</fieldset>
+
+</td></tr>
+	 </table>
+	</div>
+
+</div>
+
+
+<div style="width: 860px;margin: 0px auto;padding-top: 160px;">
+<table width="100%">
+<tr>
+<td width="520px"></td>
+<td>
+	<div class="round-box rb-gradient">
+	  <table style="font-size:16px; padding:10px"><tr><td>New to Twitter? <span style="color:gray;">Sign up</span></td></tr></table>
+	  <div class="tweet-box" style="padding:10px">
+	       <form id="signup-form" method="post" action="#">
+		<input type="text" id="user-name" value="Full Name"/>
+		<input type="text" id="email" value="Email"/>
+		<input type="password" id="password" value="Password"/> 
+		<input type="submit" value="Sign up for Twitter" style="background:#fdda4c;"/>
+	       </form>
+ 	  </div>
+	</div>
+</td>
+</tr>
+</table>
+</div>
+
+
+

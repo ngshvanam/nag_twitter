@@ -1,0 +1,21 @@
+<div class="tweet-box" >
+	<div style="padding: 9px 12px 9px;">
+		<table bordar="none">
+		 <tr VALIGN=TOP>
+			<td style="valign:top;">
+                	 <%suggest_image = image_tag("BGtwitter_normal.JPG", :width=>"60px", :height=>"60px", :class=>"profile-image")%>
+	     		 <%=link_to suggest_image, "#" %>
+			</td>
+			<td style=" padding-left:8px;">
+			 <small>				       
+	 		  <a href="#">
+			   Bill Gates @billgates
+			  </a>
+		 	  <div>Followed by Nagesh Vanam and others</div>
+		 	  <div><%=link_to "Follow", follow_path, :class=>"follow-link", :style=>"color:#009ee0", :remote=>true%></div>
+		 	 </small>
+		        </td>
+		</tr>
+	       </table>
+	</div>
+</div>

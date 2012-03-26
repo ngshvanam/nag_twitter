@@ -1,0 +1,90 @@
+
+<%=render "menu"%>
+<%=render "profile-popup"%>
+<div id="container">
+	<div class="round-box" id="acc-header">
+		<table style="padding:10px">
+			<tr VALIGN=TOP>
+				<td><%=image_tag("default_profile_add_photo.png", :style=>"width: 128px; height: 128px;",:class=>"profile-image") %></td>
+				<td width="535px" style="padding-left:8px"><b style="font-size:1.8em;">nagesh</b><div  style="color:gray;">@ngshvanam</div></td>
+				<td>
+					<%=link_to "Edit Your Profile",profile_path ,:style=>"color:#000000; text-decoration:none;",:class=>"edit-profile-btn" %>
+					<table height="100%" width="100%" style="padding-top:10px;" >
+					<tr >
+						<td style="padding-bottom:4px">
+							<div style="font-size: 14px;"><b>237</b>&nbsp;<span onclick="$('#own-page :nth-child(1)').click()" style="color: #999;font-size: 10px;line-height: 16px;text-transform: uppercase;">Tweet</span></div>			
+						</td>
+					</tr>
+					<tr height="1" bgcolor="#dddddd">
+					  <td></td>
+					</tr>
+					<tr >
+					  <td style="padding-top:4px; padding-bottom:4px">
+					  		<div style="font-size: 14px;"><b>98</b>&nbsp;<span onclick="$('#own-page :nth-child(2)').click()" style="color: #999;font-size: 10px;line-height: 16px;text-transform: uppercase;">Following</span></div>
+					  </td>
+					</tr>
+					<tr height="1"  bgcolor="#dddddd">
+					  <td></td>
+					</tr>
+					<tr >
+					  <td style="padding-top:4px; padding-bottom:4px">
+					  		<div style="font-size: 14px;"><b>156</b>&nbsp;<span onclick="$('#own-page :nth-child(3)').click()" style="color: #999;font-size: 10px;line-height: 16px;text-transform: uppercase;">Followers</span></div>
+					  </td>
+					</tr>
+					</table>
+				</td>
+			</tr>		
+		</table>
+	</div>
+	<div class="dashboard">
+   	<div id="own-page" class="round-box">
+			<div class="tweet-box own-link selected" style="border-top:0px; padding-left:10px;padding-right:10px;padding-top:6px;padding-bottom:6px;color:black">Tweets</div>
+			<div class="tweet-box own-link" style="padding-left:10px;padding-right:10px;padding-top:6px;padding-bottom:6px;">Following</div>
+			<div class="tweet-box own-link" style="padding-left:10px;padding-right:10px;padding-top:6px;padding-bottom:6px;">Followers</div>
+			<div class="tweet-box own-link" style="padding-left:10px;padding-right:10px;padding-top:6px;padding-bottom:6px;">Favorites</div>
+			<div class="tweet-box own-link" style="padding-left:10px;padding-right:10px;padding-top:6px;padding-bottom:6px;">Lists</div>
+		</div>
+   	<div class="round-box">
+			tweets<br/>
+			tweets<br/>
+			tweets<br/>
+			tweets<br/>
+			tweets<br/>
+			tweets<br/>
+			tweets<br/>
+		</div>
+	</div>
+	<div class="content">
+		<div class="round-box" id="tweets">
+		    <h2>&nbsp&nbspTweets</h2>
+			<%=render "tweetbox"%>
+			<%=render "tweetbox"%>
+			<%=render "tweetbox"%>
+			<%=render "tweetbox"%>
+			<%=render "tweetbox"%>
+			<%=render "tweetbox"%>
+			<%=render "tweetbox"%>
+			<%=render "tweetbox"%>
+			<%=render "tweetbox"%>
+			<%=render "tweetbox"%>		
+			
+		</div>
+		<div class="round-box" style="display:none" id="following">
+			<h2>&nbsp&nbspFollowing</h2>
+			<%=render "following"%>
+			<%=render "following"%>
+		</div>
+		<div class="round-box" style="display:none" id="followers">
+			<h2>&nbsp&nbspFollowers</h2>
+			<%=render "followers"%>
+		</div>
+		<div class="round-box" style="display:none" id="favorites">
+			<h2>&nbsp;&nbsp;Favourites</h2>
+		</div>
+		<div class="round-box" style="display:none" id="lists">
+			<h2>&nbsp;&nbsp;Lists</h2>
+		</div>
+	</div>
+	<div class="footer" />
+</div>
+
