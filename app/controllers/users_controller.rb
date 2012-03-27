@@ -16,7 +16,8 @@ class UsersController < ApplicationController
   	if user.save
   		redirect_to home_path
   	else 
-  		render "login"
+  		# The Following defination needs to be changed
+  	   redirect_to login_path
   	end
   end
   
