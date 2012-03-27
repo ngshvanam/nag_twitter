@@ -59,6 +59,7 @@ $(document).ready(function(){
     });
     
     function htmlText(post){
-    	return '<div style="display:none" class="tweet-box" ><div style="padding: 9px 12px 9px;"><table bordar="none"><tr VALIGN=TOP><td><a href="#"><img class="profile-image" src="/assets/BGtwitter_normal.JPG" width="60px" height="60px"></img></a></td><td style=" padding-left:8px;"><a href="#">Bill Gates</a><div>'+post+'</div></td></tr></table></div></div>';
+    	return '<div style="display:none" class="tweet-box" ><div style="padding: 9px 12px 9px;"><table width="100%" bordar="none"><tr VALIGN=TOP><td width="45px" rowspan="2"><a href="#"><img class="profile-image" src="/assets/BGtwitter_normal.JPG" width="60px" height="60px"></img></a></td><td style=" padding-left:8px;"><a href="#">Bill Gates</a></td> <td></td> <td align="right"><small style="color:gray">1h</small></td></tr><tr><td colspan="3" style=" padding-left:8px;">'+post+'</td></tr></table></div></div>';
+
     }
 });
