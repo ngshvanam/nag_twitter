@@ -35,7 +35,15 @@ def own
 	end
 end
 
-def profile
+def edit
+	if signed_in?
+		@title ="Twitter-Profile"
+	else
+		redirect_to login_path
+	end
+end
+
+def show
 	if signed_in?
 		@title ="Twitter-Profile"
 	else
