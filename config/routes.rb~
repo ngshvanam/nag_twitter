@@ -4,6 +4,7 @@ TwitterApp::Application.routes.draw do
   resources :pages
 
   get "users/login"
+  get "users/signout"
   post "users/authenticate"
   post "users/signup"
 
@@ -20,6 +21,7 @@ TwitterApp::Application.routes.draw do
   match "/profile", :to =>"pages#profile"
   match "/create_tweet", :to => "pages#create_tweet"
   match "/follow", :to => "pages#follow"
+  match "/signout", :to => "users#signout"
 
   #match '/', :to => 'users#login'
 

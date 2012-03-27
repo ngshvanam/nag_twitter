@@ -6,18 +6,18 @@
 
 <fieldset id="signin_menu">
     <%= form_for @user, :url => url_for(:controller => 'users', :action => 'authenticate'),:id=>"signin" do |f| %>
-      <label for="username">Username or email</label>
+      <label for="username">User email</label>
      
-      <%=f.text_field :name, :id=>"username", :title=>"username", :tabindex=>"4"%>
+      <%=f.text_field :email, :id=>"useremail", :title=>"useremail", :tabindex=>"4"%>
       
      </p>
       <p>
         <label for="password">Password</label>
-      <%=password_field :password, :id=>"password", :title=>"password", :tabindex=>"5" %>
+      <%=f.password_field :password, :id=>"password", :title=>"password", :tabindex=>"5" %>
       </p>
       <p class="remember">
         <%=f.submit "sign in",:id=>"signin_submit", :tabindex=>"6" %>
-        <input id="remember" name="remember_me" value="1" tabindex="7" type="checkbox">
+        <input id="remember" name="user[remember]" value="1" tabindex="7" type="checkbox" />
         <label for="remember">Remember me</label>
       </p>
     <%end%>
