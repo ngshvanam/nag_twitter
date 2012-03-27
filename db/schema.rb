@@ -19,12 +19,17 @@ ActiveRecord::Schema.define(:version => 20120327101147) do
     t.datetime "updated_at",  :null => false
   end
 
+  add_index "relationships", ["followed_id"], :name => "index_relationships_on_followed_id"
+  add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
+
   create_table "tweets", :force => true do |t|
     t.string   "content"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "tweets", ["user_id"], :name => "index_tweets_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

@@ -6,5 +6,6 @@ class CreateTweets < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :tweets, :user_id
   end
 end
