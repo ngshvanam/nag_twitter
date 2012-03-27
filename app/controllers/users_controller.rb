@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   	def signup
   		user=User.new(params[:user]);
   		if user.save
-  			sign_in @user
+  			sign_in(user,"")
   			redirect_to home_path
   		else 
   			# The Following defination needs to be changed
