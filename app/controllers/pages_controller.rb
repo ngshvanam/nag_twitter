@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
+
 def create_tweet
   if signed_in?
+        @tweet = current_user.tweets.create(params[:tweet]);
   	respond_to do |format|
    	 format.js
  	end
@@ -11,17 +13,18 @@ end
 
 def follow
   if signed_in?
-	 respond_to do |format|
-    format.js
-  end
+    respond_to do |format|
+       format.js
+    end
   else
-		redirect_to login_path
+	redirect_to login_path
   end
 end
 
 def home
 	if signed_in?
 		@title = "Twitter-Home"
+		@tweet = Tweet.new
 	else
 		redirect_to login_path
 	end

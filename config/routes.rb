@@ -11,7 +11,7 @@ TwitterApp::Application.routes.draw do
   get "pages/home"
   get "pages/own"
   get "pages/others"
-  get "pages/create_tweet"
+  post "pages/create_tweet"
   get "pages/follow"
 
   match "/login", :to =>"users#login"

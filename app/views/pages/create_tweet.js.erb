@@ -1,0 +1,21 @@
+ $(htmlText()).insertAfter($("#tweets h2")).fadeIn(500, function(){
+				$("#char-count").css("display","block");
+			   $("#char-count").prev().css("display","none");
+				$("#tweet").removeClass("expanded");
+				$("#tweet").removeAttr("style");
+				$("#tweet").val("Compose new Tweet...");
+				$("#tweet").parent().next().css("display","none");
+    		    $("#btn-tweet").removeClass("btn-highlighted").addClass("btn");
+				$("#char-count").html(140);
+			 });
+
+$("#count-box td:nth-child(1) div:first").html(<%=current_user.tweets.count%>);
+
+ function htmlText(){
+ <%tweet_img=image_tag("BGtwitter_normal.JPG", :width=>"60px", :height=>"60px", :class=>"profile-image") %>			
+
+    	return '<div style="display:none" class="tweet-box" ><div style="padding: 9px 12px 9px;"><table width="100%" bordar="none"><tr VALIGN=TOP><td  rowspan="2" width="45px" rowspan="2"><%=link_to tweet_img,page_path(@tweet.user)%></td><td style=" padding-left:8px;"><%=link_to @tweet.user.name,page_path(@tweet.user) %></td><td><%if @tweet.user == current_user%><%=link_to "delete","#"%><%end%></td> <td align="right"><small style="color:gray"><%=time_ago_in_words(@tweet.created_at)%></small></td></tr><tr><td colspan="3" style=" padding-left:8px;"><%=@tweet.content%></td></tr></table></div></div>';
+
+    }
+
+

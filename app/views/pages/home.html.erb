@@ -15,7 +15,7 @@
 				</td>
 				<td colspan="2" style=" padding-left:8px;">
 				  
- 				   <div><%=link_to "Nagesh Vanam",own_path %></div>
+ 				   <div><%=link_to current_user.name,own_path %></div>
  				  
  				 <small style="color:#999999">View my profile page</small>
     			</td>
@@ -24,22 +24,22 @@
 			</div>
 			
 			<div class="tweet-box">
-			 <table width="100%" cellspacing="0">
+			 <table id="count-box" width="100%" cellspacing="0">
    		  <tr VALIGN=TOP>
 				<td width="20%" style="padding:4px 10px 4px 10px">
- 				  <div style="font-size: 14px;"><b>237</b></div>
+ 				  <div style="font-size: 14px;"><b><%=current_user.tweets.count%></b></div>
  				  <div style="color: #999;font-size: 10px;line-height: 16px;text-transform: uppercase;">Tweet
  				  </div>
 				</td>
 				<td bgcolor="#dddddd"></td>
 				<td width="30%" style="padding:4px 10px 4px 10px">
-				  <div style="font-size: 14px;"><b>98</b></div>
+				  <div style="font-size: 14px;"><b><%=current_user.following.count%></b></div>
  				  <div style="color: #999;font-size: 10px;line-height: 16px;text-transform: uppercase;">Following
  				  </div>
 				</td>
 				<td bgcolor="#dddddd"></td>
 				<td  width="50%" style="padding:4px 10px 4px 10px">
-				  <div style="font-size: 14px;"><b>156</b></div>
+				  <div style="font-size: 14px;"><b><%=current_user.followers.count%></b></div>
  				  <div style="color: #999;font-size: 10px;line-height: 16px;text-transform: uppercase;">Followers
  				  </div>
 				</td>
@@ -48,8 +48,13 @@
 			</div>
 			
 			<div style="padding: 10px 10px 10px;" class="tweet-box">
+
+
+					<%= form_for @tweet,:url => {:action => "create_tweet" }, :remote => true do |f| %>
+
+
 			 		<div class="text-area">
-			 		<textarea rows="1" id="tweet" class="tweet-textarea">Compose new Tweet...</textarea>
+						  <%= f.text_area :content, :rows=>"1", :id=>"tweet", :class=>"tweet-textarea", :value=>"Compose new Tweet..." %>
 			 		</div>
 			 		<div style="display:none">
 			 		<table style="padding-top: 12px;" border="0" cellspacing="0" cellpadding="0">
@@ -59,35 +64,24 @@
 			 			<div id="char-count" style="color: #999;font-size: 14px;line-height: 16px;text-transform: uppercase;">140</div>
 			 			</td>
 			 			<td>
-			<%=link_to "Tweet", create_tweet_path, :id=>"btn-tweet", :style=>"color:#000000; text-decoration:none;", :class=>"btn", :remote=>true %>
+			  			<%= f.submit "Tweet", :id=>"btn-tweet", :style=>"color:#000000; text-decoration:none;", :class=>"btn"%>
 			 			</td>
 			 			</tr>
 			 		</table>
 			 		</div>
-			 		
+			 		<% end %>
 			</div>
 			
 		</div>
    	<div id="suggestion-box"  class="round-box">
    	   <h3 style="margin-left:8px">Who to Follow</h3>
 	   <%=render "suggestbox"%>
-	   <%=render "suggestbox"%>
-	   <%=render "suggestbox"%>
 	</div>
 	</div>
 	<div class="content">
 		<div class="round-box" id="tweets">
 			<div><h2>&nbsp&nbspTweets</h2></div>
-			<%=render "tweetbox"%>
-			<%=render "tweetbox"%>
-			<%=render "tweetbox"%>
-			<%=render "tweetbox"%>
-			<%=render "tweetbox"%>
-			<%=render "tweetbox"%>
-			<%=render "tweetbox"%>
-			<%=render "tweetbox"%>
-			<%=render "tweetbox"%>
-			<%=render "tweetbox"%>			
+			<%=render "tweetbox"%>		
 		</div>
 	</div>
 	 <div class="footer" />
